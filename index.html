@@ -136,6 +136,65 @@
       })();
     </script>
 
+    <script>
+      // Magazine interactif avec effet d'ouverture de livre
+      document.addEventListener('DOMContentLoaded', function(){
+        console.log('Script magazine chargé');
+        
+        var cover = document.getElementById('magazineCover');
+        var openMag = document.getElementById('magazineOpen');
+        var closeBtn = document.getElementById('closeMagazine');
+        
+        console.log('cover:', cover);
+        console.log('openMag:', openMag);
+        console.log('closeBtn:', closeBtn);
+        
+        if(!cover) {
+          console.error('Couverture non trouvée!');
+          return;
+        }
+        if(!openMag) {
+          console.error('Magazine ouvert non trouvé!');
+          return;
+        }
+        if(!closeBtn) {
+          console.error('Bouton fermer non trouvé!');
+          return;
+        }
+
+        console.log('Tous les éléments trouvés, ajout des événements...');
+
+        // Ouvrir le magazine avec animation de livre
+        cover.addEventListener('click', function(){
+          console.log('Clic sur la couverture!');
+          cover.style.display = 'none';
+          openMag.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          console.log('Magazine ouvert!');
+        });
+
+        // Fermer le magazine
+        closeBtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          console.log('Clic sur fermer!');
+          openMag.style.display = 'none';
+          cover.style.display = 'flex';
+          document.body.style.overflow = 'auto';
+          console.log('Magazine fermé!');
+        });
+
+        // Fermer aussi avec la touche Échap
+        document.addEventListener('keydown', function(e){
+          if(e.key === 'Escape' && openMag.style.display === 'flex'){
+            console.log('Touche Echap pressée!');
+            closeBtn.click();
+          }
+        });
+        
+        console.log('Événements ajoutés avec succès!');
+      });
+    </script>
+
   <main>
     <!-- Section : Partir à l'étranger -->
     <section id="mobilite-sortante">
@@ -188,7 +247,7 @@
 
         <h3>Où partir ?</h3>
         <p>Découvrez les destinations populaires pour votre semestre d'études :</p>
-        <img src="assets/depuis-que-le-realisateur-cedric-klapisch-l-a-consacree-dans-son-film-l-auberge-espagnole-barcelone-reste-la-destination-emblematique-des-etudiants-en-erasmus-la-ville-est-plebiscitee-pour-sa-vie-nocturne-mais-egal.jpg" alt="Barcelone, destination emblématique des étudiants en Erasmus">
+        <img src="assets/barcelone.jpg" alt="Barcelone, destination emblématique des étudiants en Erasmus">
         <ul>
             <li>Europe : Allemagne, Espagne, Belgique (Erasmus)</li>
             <li>Amérique du Nord : CEGEP au Québec, universités partenaires au Canada</li>
@@ -232,7 +291,43 @@
             <img src="assets/mehdi-quebec-e1587547696711.jpeg" alt="Mehdi au Québec">
         </article>
 
-        <p>Retrouvez plus de témoignages sur notre <a href="#">magazine dédié à la mobilité internationale</a>.</p>
+        <p>Retrouvez plus de témoignages sur notre magazine dédié à la mobilité internationale ci-dessous.</p>
+    </section>
+
+    <!-- Section : Magazine interactif -->
+    <section id="magazine-section">
+        <div class="magazine-header">
+            <h2>Magazine Mobilité Internationale</h2>
+            <p>Cliquez sur la couverture pour feuilleter le magazine</p>
+        </div>
+        
+        <div class="magazine-container">
+            <!-- Couverture du magazine (état fermé) -->
+            <div class="magazine-cover" id="magazineCover">
+                <img src="assets/Cover magazine SAE 302.jpg" alt="Couverture du magazine" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="placeholder-cover">
+                    <h3>Magazine Mobilité</h3>
+                    <p>Cliquez pour ouvrir</p>
+                </div>
+            </div>
+
+            <!-- Magazine ouvert (initialement caché) -->
+            <div class="magazine-open" id="magazineOpen">
+                <button class="close-magazine" id="closeMagazine">✕</button>
+                
+                <div class="magazine-book">
+                    <!-- Couverture qui s'ouvre (effet 3D) -->
+                    <div class="book-cover-animation" id="bookCoverAnim">
+                        <img src="assets/Cover magazine SAE 302.jpg" alt="Couverture">
+                    </div>
+                    
+                    <!-- Double page du magazine -->
+                    <div class="magazine-double-page">
+                        <img src="assets/Double page magazine SAE 302.jpg" alt="Double page du magazine">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Section : Vidéos témoignages -->
@@ -243,20 +338,14 @@
       
 
         <div class="video-container video-large">
-            <video controls>
-                <source src="assets/HyperDeck_0002.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture de vidéos.
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UA0jnNFScD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <p class="video-caption">Interview avec M. Alain Lamboux-Durand sur la mobilité internationale</p>
         </div>
 
 
 
           <div class="video-container video-large">
-            <video controls>
-                <source src="assets/Interview Camille NORRITO (Canada) réalisé par Andréa MESTRE & Nicolas THAI.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture de vidéos.
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/olEDyRsCYNQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <p class="video-caption">Témoignage de Camille NORRITO - Mobilité au Canada</p>
         </div>
     </section>
