@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faire un ou plusieurs semestres d'études à l'étranger</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+
+  <!-- Top menu with boxed links and a centered small logo overlapping the banner -->
+  <div class="top-menu">
+    <div class="container top-menu-inner">
+      <img src="assets/logo.jpg" alt="virgule" class="comma-logo-top" onerror="this.style.display='none'">
+      <ul class="top-links">
+        <li><a href="#">Facultés (UFR)</a></li>
+        <li><a href="#">Instituts et écoles</a></li>
+        <li><a href="#">Unités de recherche</a></li>
+        <li><a href="#">Services et outils</a></li>
+        <li><a href="#">L'ACTU</a></li>
+        <li><a href="#">ENT</a></li>
+      </ul>
+      <img src="assets/logo.png" alt="logo-small" class="top-logo" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <!-- Banner: gradient background with logos centered and social icons at right -->
+  <div class="banner">
+    <div class="container banner-inner">
+      <div class="banner-left">
+        <div class="iut-block">
+          <img src="assets/iUT-NFC-logo-2025.png" alt="iut-nfc" class="iut-img" onerror="this.style.display='none'">
+        </div>
+      </div>
+      <div class="banner-center">
+        <div class="logos">
+          <img src="assets/logo.png" alt="Université" class="logo-large" onerror="this.style.display='none'" />
+        </div>
+      </div>
+      <div class="banner-right">
+        <div class="socials">
+          <a class="social" href="#"><img src="assets/insta.png" alt="Instagram"></a>
+          <a class="social" href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+          <a class="social" href="#"><img src="assets/yt.png" alt="YouTube"></a>
+          <a class="social" href="#"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+          <a class="social" href="#"><img src="assets/tiktok.png" alt="TikTok"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main navigation bar (dark) -->
+  <nav class="main-navbar">
+    <div class="container nav-inner">
+      <ul class="nav-list">
+        <li><a href="#">L'IUT ▾</a></li>
+        <li><a href="#">Formations ▾</a></li>
+        <li><a href="#">Candidature ▾</a></li>
+        <li><a href="#">Admission ▾</a></li>
+        <li><a href="#">Vie étudiante ▾</a></li>
+        <li class="has-dropdown">
+          <button class="nav-btn" aria-expanded="false">International ▾</button>
+          <div class="dropdown-panel" aria-hidden="true">
+            <div class="dropdown-inner container">
+              <div class="dd-col">
+                <ul>
+                  <li><a href="#">FutureLab 2026</a></li>
+                  <li><a href="#">Accueillir des étudiants internationaux</a></li>
+                  <li><a href="#">Étudiant international admis, quelles démarches ?</a></li>
+                  <li><a href="#">3rd year Computer Science Bachelor</a></li>
+                  <li><a href="#">3rd year International Business</a></li>
+                </ul>
+              </div>
+              <div class="dd-col">
+              
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Entreprises ▾</a></li>
+        <li><a href="#">Recherche ▾</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    // Small script to toggle International dropdown on click (mobile/touch support)
+    (function(){
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest('.nav-btn');
+        // close other open dropdowns if clicking outside
+        if(!btn){
+          document.querySelectorAll('.nav-list .has-dropdown.open').forEach(function(li){
+            li.classList.remove('open');
+            li.querySelector('.nav-btn').setAttribute('aria-expanded','false');
+            li.querySelector('.dropdown-panel').setAttribute('aria-hidden','true');
+          });
+          return;
+        }
+
+        e.preventDefault();
+        var li = btn.closest('.has-dropdown');
+        var isOpen = li.classList.contains('open');
+        // close others
+        document.querySelectorAll('.nav-list .has-dropdown.open').forEach(function(other){
+          if(other!==li){
+            other.classList.remove('open');
+            other.querySelector('.nav-btn').setAttribute('aria-expanded','false');
+            other.querySelector('.dropdown-panel').setAttribute('aria-hidden','true');
+          }
+        });
+        if(isOpen){
+          li.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+          li.querySelector('.dropdown-panel').setAttribute('aria-hidden','true');
+        } else {
+          li.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+          li.querySelector('.dropdown-panel').setAttribute('aria-hidden','false');
+        }
+      });
+    })();
+  </script>
+    <script>
+      // Back to top button
+      (function(){
+        var btn = document.getElementById('backToTop');
+        if(!btn) return;
+        window.addEventListener('scroll', function(){
+          if(window.scrollY > 300) btn.style.display = 'flex'; else btn.style.display = 'none';
+        });
+        btn.addEventListener('click', function(){
+          window.scrollTo({top:0,behavior:'smooth'});
+        });
+      })();
+    </script>
+
+  <main>
+    <!-- Section : Partir à l'étranger -->
+    <section id="mobilite-sortante">
+    <h2>Partir à l'étranger : guide pour les étudiants de l'IUT NFC</h2>
+    
+    <p>À partir de la <strong>2ᵉ année</strong>, tous les étudiants de l'IUT Nord Franche-Comté peuvent envisager un ou deux semestres à l’étranger dans le cadre de leur BUT. 
+    L’établissement propose un accompagnement complet pour préparer le départ et réussir sa mobilité.</p>
+    
+    
+    <h3>Qui peut partir ?</h3>
+    <p>La mobilité internationale est accessible à tous les étudiants de l'IUT NFC souhaitant enrichir leur parcours académique. Les critères d'éligibilité sont les suivants :</p>
+    <ul>
+        <li>Étudiants de BUT 2 ou 3 selon le cursus</li>
+        <li>Maximum 2 semestres sur l'ensemble du cursus</li>
+        <li>Accords définis par chaque département et partenaires internationaux</li>
+    </ul>
+    <p>Il est recommandé de se renseigner auprès du responsable des relations internationales de votre département dès la première année pour bien préparer votre projet.</p>
+
+    <h3>Où partir ?</h3>
+    <p>L'IUT Nord Franche-Comté entretient des partenariats avec de nombreuses institutions à travers le monde. Voici les principales destinations :</p>
+    <ul>
+        <li>Europe : Allemagne, Espagne, Belgique (programme Erasmus)</li>
+        <li>Amérique du Nord : CEGEP au Québec, universités partenaires au Canada</li>
+        <li>Autres destinations selon les accords spécifiques des départements</li>
+    </ul>
+    <p>Chaque destination offre des avantages uniques : immersion linguistique, découverte d'approches pédagogiques différentes, enrichissement culturel et développement de compétences interculturelles très appréciées par les employeurs.</p>
+
+    <h3>Financer sa mobilité</h3>
+    <p>Partir étudier à l'étranger représente un investissement, mais de nombreuses aides financières existent pour vous accompagner dans votre projet. Ne laissez pas les aspects financiers vous freiner !</p>
+    <ul>
+        <li><a href="#" target="_blank">Allocation Erasmus+</a></li>
+        <li>Bourses régionales (Aquisis)</li>
+        <li>Aide à la mobilité internationale pour les étudiants boursiers (AMI)</li>
+    </ul>
+    <p>Le montant des aides varie selon la destination et votre situation. Un accompagnement personnalisé est proposé par le service des relations internationales pour constituer votre dossier de demande de bourses. N'hésitez pas à les contacter dès que votre projet se concrétise.</p>
+
+    </section>
+
+    <!-- Section 2 : Partir en semestre d'études -->
+    <section id="semestres">
+        <h2>Partir en semestre d'études</h2>
+        <p>À partir de la <strong>2ᵉ année</strong>, tous les étudiants de l'IUT NFC peuvent envisager 1 à 2 semestres à l'étranger, selon les accords de leur département.</p>
+        
+        <h3>Qui peut partir ?</h3>
+        <ul>
+            <li>Étudiants de BUT 2 ou 3 selon le cursus</li>
+            <li>Limite : 2 semestres sur l'ensemble du cursus</li>
+            <li>Accords selon le département et partenaires</li>
+        </ul>
+
+        <h3>Où partir ?</h3>
+        <p>Découvrez les destinations populaires pour votre semestre d'études :</p>
+        <img src="assets/depuis-que-le-realisateur-cedric-klapisch-l-a-consacree-dans-son-film-l-auberge-espagnole-barcelone-reste-la-destination-emblematique-des-etudiants-en-erasmus-la-ville-est-plebiscitee-pour-sa-vie-nocturne-mais-egal.jpg" alt="Barcelone, destination emblématique des étudiants en Erasmus">
+        <ul>
+            <li>Europe : Allemagne, Espagne, Belgique (Erasmus)</li>
+            <li>Amérique du Nord : CEGEP au Québec, universités partenaires au Canada</li>
+            <li>Autres destinations via accords internationaux</li>
+        </ul>
+
+        <h3>Financer sa mobilité</h3>
+        <img src="assets/erasmus_logo.png" alt="Logo Erasmus+">
+        <img src="assets/mobilite-imga-eman-era01a.jpg" alt="Mobilité Erasmus+ - Le programme européen pour la formation, la jeunesse et le sport">
+        <ul>
+            <li><a href="#">Allocation Erasmus+</a></li>
+            <li>Bourses régionales (Aquisis)</li>
+            <li>Aide à la mobilité internationale (étudiants boursiers)</li>
+        </ul>
+
+        <ul>
+            <li><a href="https://www.iut-nfc.univ-fcomte.fr/faire-un-ou-plusieurs-semestres-a-letranger/" target="_blank">En savoir plus sur les semestres à l'étranger</a></li>
+        </ul>
+    </section>
+
+    <!-- Section 3 : Témoignages -->
+    <section id="temoignages">
+        <h2>Témoignages d'étudiants</h2>
+        <p>Découvrez les expériences authentiques de nos étudiants partis en mobilité internationale. Leurs récits témoignent de l'impact positif d'un semestre à l'étranger sur leur parcours académique et personnel.</p>
+        
+        <article class="temoignage">
+            <h3>Laura, semestre en Italie</h3>
+            <img src="assets/Visuel_Ariana_v2.jpg" alt="Étudiante heureuse avec son diplôme de graduation">
+            <p>"Partir en semestre d'études à l'étranger a été la meilleure décision de mes études. C'est une expérience enrichissante qui m'a permis de grandir personnellement et professionnellement."</p>
+        </article>
+
+        <article class="temoignage">
+            <h3>Marie, Erasmus en Espagne</h3>
+            <p>"Avant de partir, j'avais peur de m'adapter. Finalement, cette expérience m'a permis de rencontrer des étudiants du monde entier et de progresser en espagnol."</p>
+            <img src="assets/pour-flavie-et-leopold-participer-a-cette-journee-d-immersion-etait-un-vrai-plus-photo-jean-pierre-coulez-1729788926.jpg" alt="Marie en Espagne">
+        </article>
+
+        <article class="temoignage">
+            <h3>Mehdi, semestre au Québec</h3>
+            <p>"C'était une chance incroyable. Je me suis senti soutenu par l'IUT et j'ai pu profiter de bourses pour financer mon séjour."</p>
+            <img src="assets/mehdi-quebec-e1587547696711.jpeg" alt="Mehdi au Québec">
+        </article>
+
+        <p>Retrouvez plus de témoignages sur notre <a href="#">magazine dédié à la mobilité internationale</a>.</p>
+    </section>
+
+    <!-- Section : Vidéos témoignages -->
+    <section id="videos-temoignages">
+        <h2>Témoignages vidéo</h2>
+        <p>Découvrez les témoignages en vidéo de nos étudiants partis en mobilité internationale.</p>
+        
+      
+
+        <div class="video-container video-large">
+            <video controls>
+                <source src="assets/HyperDeck_0002.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            <p class="video-caption">Interview avec M. Alain Lamboux-Durand sur la mobilité internationale</p>
+        </div>
+
+
+
+          <div class="video-container video-large">
+            <video controls>
+                <source src="assets/Interview Camille NORRITO (Canada) réalisé par Andréa MESTRE & Nicolas THAI.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            <p class="video-caption">Témoignage de Camille NORRITO - Mobilité au Canada</p>
+        </div>
+    </section>
+
+    <!-- Section 4 : Guide pratique -->
+    <section id="guide">
+        <h2>Guide pratique pour préparer son départ</h2>
+        <p>Une mobilité internationale réussie nécessite une préparation minutieuse. Voici les étapes clés pour bien organiser votre séjour à l'étranger :</p>
+        
+        <h3>Calendrier de préparation</h3>
+        <ul>
+            <li><strong>12 mois avant :</strong> Commencez à réfléchir à votre projet et consultez les destinations disponibles</li>
+            <li><strong>9-10 mois avant :</strong> Rencontrez le responsable des relations internationales de votre département</li>
+            <li><strong>6-8 mois avant :</strong> Constituez votre dossier de candidature et de demande de bourses</li>
+            <li><strong>4-6 mois avant :</strong> Finalisez votre inscription dans l'établissement d'accueil</li>
+            <li><strong>2-3 mois avant :</strong> Organisez votre logement, souscrivez une assurance, préparez vos documents de voyage</li>
+        </ul>
+
+        <h3>Démarches administratives</h3>
+        <p>Selon votre destination, plusieurs documents peuvent être nécessaires :</p>
+        <ul>
+            <li>Passeport ou carte d'identité en cours de validité</li>
+            <li>Visa étudiant (pour certains pays hors Union Européenne)</li>
+            <li>Attestation d'inscription dans l'établissement d'accueil</li>
+            <li>Assurance santé internationale</li>
+            <li>Certificat de logement</li>
+        </ul>
+
+        <h3>Préparation linguistique et culturelle</h3>
+        <p>Pour profiter pleinement de votre expérience à l'étranger :</p>
+        <ul>
+            <li>Suivez des cours de langue ou utilisez des applications d'apprentissage</li>
+            <li>Renseignez-vous sur les coutumes et la culture du pays d'accueil</li>
+            <li>Participez aux sessions de préparation au départ organisées par l'IUT</li>
+            <li>Échangez avec des étudiants ayant déjà effectué une mobilité dans votre destination</li>
+            <li>Consultez les témoignages et interviews d'anciens étudiants en mobilité</li>
+        </ul>
+        
+        <p><strong>Besoin d'aide ?</strong> Le service des relations internationales de l'IUT NFC vous accompagne à chaque étape de votre projet. N'hésitez pas à les contacter pour toute question.</p>
+    </section>
+  </main>
+
+  <footer >
+    <div class="footer-hero">
+      <div class="container footer-hero-inner">
+        <div class="footer-left">
+          <h3 class="footer-title">INFORMATIONS</h3>
+          <div class="footer-left-body">
+            <p class="muted">iUT Nord Franche-Comté<br>
+            19 avenue du Maréchal Juin<br>
+            BP 527<br>
+            90016 Belfort Cedex</p>
+            <p class="phone">+33 (0)3 84 58 77 00</p>
+            <p class="muted small">L'iUT Nord Franche-Comté, est une composante de l'Université Marie et Louis Pasteur. Établissement public d'enseignement supérieur.</p>
+
+            <img src="assets/Bloc_Marianne.svg.png" alt="République Française - Liberté Égalité Fraternité" class="gov-logo">
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <h3 class="footer-title">LIENS UTILES</h3>
+          <ul class="useful-links">
+            <li><a href="#">Accès à nos sites de formation</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Politique de cookies (EU)</a></li>
+            <li><a href="#">Accès à Intranet</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <div class="copyright">Copyright ©IUT Nord Franche-Comté — Tous droits réservés.</div>
+        <div class="bottom-socials">
+          <a class="social" href="#"><img src="assets/insta.png" alt="instagram"></a>
+          <a class="social" href="#"><img src="assets/facebook.png" alt="facebook"></a>
+          <a class="social" href="#"><img src="assets/yt.png" alt="youtube"></a>
+          <a class="social" href="#"><img src="assets/linkedin.png" alt="linkedin"></a>
+          <a class="social" href="#"><img src="assets/tiktok.png" alt="tiktok"></a>
+        </div>
+      </div>
+    </div>
+
+    <button id="backToTop" title="Haut">▲</button>
+  </footer>
+</body>
+</html>

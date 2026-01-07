@@ -1,0 +1,8 @@
+# Ignorer les dossiers et fichiers communs
+node_modules/
+.env
+.DS_Store
+.vscode/
+
+# Ignorer fichiers temporaires
+*.log
