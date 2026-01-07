@@ -119,14 +119,34 @@ body{
 
 .main-navbar{background:#07323a;border-top:4px solid #c23a3a;border-bottom:3px solid #c23a3a;min-height:60px;display:flex;align-items:center}
 .nav-inner{display:flex;align-items:center}
-.nav-list{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
-.nav-list a{color:#fff;text-decoration:none;padding:1rem 0;display:inline-block}
-.nav-list a:hover{opacity:0.9}
+.nav-list{display:flex;gap:0.5rem;list-style:none;margin:0;padding:0}
+.nav-list a{
+  color:#fff;
+  text-decoration:none;
+  padding:1rem 0.8rem;
+  display:inline-block;
+  transition:all 0.3s ease;
+  white-space:nowrap;
+}
+.nav-list a:hover{
+  color:#c23a3a;
+}
 
 /* Dropdown / mega-menu styles */
 .nav-list li{position:relative}
-.has-dropdown .nav-btn{background:none;border:0;color:#fff;font-weight:700;cursor:pointer;padding:1rem 0;transition:var(--transition);opacity:0.9}
-.has-dropdown .nav-btn:hover{opacity:1;text-shadow:0 2px 4px rgba(0,0,0,0.2)}
+.has-dropdown .nav-btn{
+  background:none;
+  border:0;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  padding:1rem 0.8rem;
+  transition:all 0.3s ease;
+  white-space:nowrap;
+}
+.has-dropdown .nav-btn:hover{
+  color:#c23a3a;
+}
 .dropdown-panel{position:absolute;left:auto;right:0;top:100%;width:360px;background:#05262b;color:#fff;display:none;border-top:4px solid #c23a3a;z-index:40;box-shadow:0 6px 18px rgba(0,0,0,0.25);border-radius:0 0 8px 8px;animation:slideDown 0.3s ease}
 @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 .dropdown-inner{display:block;padding:0.75rem 1rem}
@@ -156,7 +176,19 @@ body{
 .top-links{display:flex;gap:0.5rem;list-style:none;margin:0;padding:0}
 .top-links li{border-left:1px solid #d9d9d9}
 .top-links li:first-child{border-left:0}
-.top-links a{display:block;padding:0.6rem 1rem;color:#0b3a46;text-decoration:none;font-weight:600}
+.top-links a{
+  display:block;
+  padding:0.6rem 1rem;
+  color:#0b3a46;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease;
+  position:relative;
+}
+.top-links a:hover{
+  background:#07323a;
+  color:#fff;
+}
 .top-logo{position:absolute;left:50%;transform:translate(-50%,50%);height:36px}
 
 /* Responsive */
